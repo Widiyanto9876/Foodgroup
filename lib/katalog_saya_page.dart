@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodgroup/constanta.dart';
+import 'package:foodgroup/data.dart';
 
 import 'form_jual_page.dart';
 import 'size_config.dart';
@@ -14,6 +15,14 @@ class KatalogSayaPage extends StatefulWidget {
 class _KatalogSayaPageState extends State<KatalogSayaPage> {
 
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
+  List<MenuKatalog> menuKatalog = [];
+
+
+  @override
+  void initState() {
+    menuKatalog = getMenuKatalog();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +35,7 @@ class _KatalogSayaPageState extends State<KatalogSayaPage> {
       ),
       body: ListView.builder(
           padding: EdgeInsets.only(top: getProportionateScreenHeight(20)),
-          itemCount: 15,
+          itemCount: menuKatalog.length,
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {},
@@ -64,7 +73,7 @@ class _KatalogSayaPageState extends State<KatalogSayaPage> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "Daging Ayam Segar",
+                                          menuKatalog[index].pruduct,
                                           style: TextStyle(
                                               fontSize:
                                                   getProportionateScreenWidth(
@@ -73,7 +82,7 @@ class _KatalogSayaPageState extends State<KatalogSayaPage> {
                                       ],
                                     ),
                                     Text(
-                                      "Rp 25.000",
+                                      menuKatalog[index].price,
                                       style: TextStyle(
                                           fontSize:
                                               getProportionateScreenWidth(13),
@@ -101,7 +110,7 @@ class _KatalogSayaPageState extends State<KatalogSayaPage> {
                                                         8),
                                               ),
                                               Text(
-                                                "Dilihat: 17",
+                                                "Dilihat: ${menuKatalog[index].seen}",
                                                 style: TextStyle(
                                                     fontSize:
                                                         getProportionateScreenWidth(
@@ -144,7 +153,7 @@ class _KatalogSayaPageState extends State<KatalogSayaPage> {
                                                         8),
                                               ),
                                               Text(
-                                                "Disukai: 9",
+                                                "Disukai: ${menuKatalog[index].like}",
                                                 style: TextStyle(
                                                     fontSize:
                                                         getProportionateScreenWidth(

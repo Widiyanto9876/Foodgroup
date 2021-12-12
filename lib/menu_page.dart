@@ -18,6 +18,7 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   List<MenuHomeModel> menuListData = [];
 
+  List<MenuProduct> menuListProductData = [];
   final List<Widget> imageList = [
     Container(
       width: double.infinity,
@@ -64,6 +65,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   void initState() {
     menuListData = getMenuHomePage();
+    menuListProductData = getMenuProduct();
     // TODO: implement initState
     super.initState();
   }
@@ -121,12 +123,6 @@ class _MenuPageState extends State<MenuPage> {
                               style: TextStyle(
                                   fontSize: getProportionateScreenWidth(15)),
                               obscureText: false,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Tidak Boleh Kosong";
-                                  //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Tidak Boleh Kosong")));
-                                }
-                              },
                               onFieldSubmitted: (val) {
                                 print(val);
                                 Navigator.push(
@@ -284,7 +280,7 @@ class _MenuPageState extends State<MenuPage> {
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   childAspectRatio: 1),
-              itemCount: 7,
+              itemCount: menuListProductData.length,
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
                   onTap: (){
@@ -317,13 +313,13 @@ class _MenuPageState extends State<MenuPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Nama Product / Kilo",
+                                    menuListProductData[index].pruduct,
                                     style: TextStyle(
                                         fontSize:
                                             getProportionateScreenWidth(11)),
                                   ),
                                   Text(
-                                    "Rp 7.500",
+                                    menuListProductData[index].price,
                                     style: TextStyle(
                                         fontSize: getProportionateScreenWidth(11),
                                         color: Colors.orange),
@@ -331,11 +327,11 @@ class _MenuPageState extends State<MenuPage> {
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
-                                    children: const [
+                                    children:  [
                                       SizedBox(),
                                       Icon(
                                         Icons.favorite,
-                                        color: Colors.red,
+                                        color:menuListProductData[index].favorite == true ?Colors.red:Colors.grey,
                                       )
                                     ],
                                   )

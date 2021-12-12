@@ -77,16 +77,12 @@ class _LoginPageState extends State<LoginPage> {
                         child: TextFormField(
                           controller: _emailController,
                           // controller: passwordController..text = 'A0000048',
+
+
+
                           style: TextStyle(
                               fontSize: getProportionateScreenWidth(15)),
                           obscureText: false,
-
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "Tidak Boleh Kosong";
-                              //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Tidak Boleh Kosong")));
-                            }
-                          },
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Email",
@@ -115,13 +111,6 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                               fontSize: getProportionateScreenWidth(15)),
                           obscureText: true,
-
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return "Tidak Boleh Kosong";
-                              //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Tidak Boleh Kosong")));
-                            }
-                          },
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Password",

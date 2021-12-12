@@ -17,46 +17,6 @@ class ProductDescPage extends StatefulWidget {
 }
 
 class _ProductDescPageState extends State<ProductDescPage> {
-  final List<Widget> imageList = [
-    Container(
-      height: getProportionateScreenHeight(400),
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/12/03/18/04/christmas-balls-2995437_960_720.jpg",
-              ))),
-    ),
-    Container(
-      height: getProportionateScreenHeight(400),
-      width: double.infinity,
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/12/03/18/04/christmas-balls-2995437_960_720.jpg",
-              ))),
-    ),
-    Container(
-      height: getProportionateScreenHeight(400),
-      width: double.infinity,
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          image: DecorationImage(
-              fit: BoxFit.fill,
-              image: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/12/03/18/04/christmas-balls-2995437_960_720.jpg",
-              ))),
-    ),
-    // Image.network(
-    //   "https://cdn.pixabay.com/photo/2017/12/13/00/23/christmas-3015776_960_720.jpg",
-    // ),
-    // Image.network(
-    //   "https://cdn.pixabay.com/photo/2019/12/19/10/55/christmas-market-4705877_960_720.jpg",
-    // ),
-  ];
   int _current = 0;
   final CarouselController _controller = CarouselController();
   final List<Widget> imageSliders = imgList

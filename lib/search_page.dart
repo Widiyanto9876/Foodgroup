@@ -3,6 +3,8 @@ import 'package:foodgroup/constanta.dart';
 import 'package:foodgroup/product_desc_page.dart';
 import 'package:foodgroup/size_config.dart';
 
+import 'data.dart';
+
 class SearchPage extends StatefulWidget {
    const SearchPage({Key? key,required this.searchHint}) : super(key: key);
   final String searchHint;
@@ -11,8 +13,9 @@ class SearchPage extends StatefulWidget {
   _SearchPageState createState() => _SearchPageState();
 }
 
-class _SearchPageState extends State<SearchPage>
-    with SingleTickerProviderStateMixin {
+class _SearchPageState extends State<SearchPage> with SingleTickerProviderStateMixin {
+
+  List<MenuProduct> menuListPromoData = [];
   TabController? _tabController;
 final TextEditingController _searchController = TextEditingController();
   @override
@@ -49,6 +52,7 @@ final TextEditingController _searchController = TextEditingController();
     _isCheckedSort = List<bool>.filled(_listSort.length, false);
     _isCheckedKategori = List<bool>.filled(_listKategori.length, false);
     _tabController = TabController(length: 3, vsync: this);
+    menuListPromoData = getMenuPromo();
     // TODO: implement initState
     super.initState();
   }
@@ -467,7 +471,7 @@ final TextEditingController _searchController = TextEditingController();
               Container(
                 color: Colors.white,
                 child: ListView.builder(
-                    itemCount: 5,
+                    itemCount: menuListPromoData.length,
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
@@ -504,14 +508,14 @@ final TextEditingController _searchController = TextEditingController();
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Daging Ayam Segar",
+                                          menuListPromoData[index].pruduct,
                                           style: TextStyle(
                                               fontSize:
                                                   getProportionateScreenWidth(
                                                       13)),
                                         ),
                                         Text(
-                                          "Rp 25.000",
+                                          menuListPromoData[index].price,
                                           style: TextStyle(
                                               fontSize:
                                                   getProportionateScreenWidth(
@@ -536,7 +540,7 @@ final TextEditingController _searchController = TextEditingController();
                                                             15),
                                                   ),
                                                   Text(
-                                                    "745m",
+                                                    menuListPromoData[index].range,
                                                     style: TextStyle(
                                                         fontSize:
                                                             getProportionateScreenWidth(
@@ -547,9 +551,8 @@ final TextEditingController _searchController = TextEditingController();
                                             ),
                                             Icon(
                                               Icons.favorite_outlined,
-                                              size: getProportionateScreenWidth(
-                                                  18),
-                                              color: Colors.red,
+                                              size: getProportionateScreenWidth(18),
+                                              color:menuListPromoData[index].favorite == true ? Colors.red:Colors.grey,
                                             )
                                           ],
                                         )
