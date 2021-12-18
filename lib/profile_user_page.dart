@@ -60,126 +60,128 @@ class _ProfileUserPageState extends State<ProfileUserPage> {
                     topRight:
                         Radius.circular(getProportionateScreenWidth(35)))),
             padding: EdgeInsets.only(top: getProportionateScreenHeight(70)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Text(
-                    "Nama Toko Serba Guna",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: getProportionateScreenWidth(18),
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(20)),
-                  child: Padding(
-                    padding:
-                        EdgeInsets.only(top: getProportionateScreenHeight(40)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Akun Saya",
-                          style: TextStyle(
-                              fontSize: getProportionateScreenWidth(15)),
-                        ),
-                        SizedBox(
-                          height: getProportionateScreenHeight(20),
-                        ),
-                        InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const InformasiSayaPage()));
-                            },
-                            child: listProfile(
-                                Icons.person_outlined, "Informasi Akun")),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        const Divider(
-                          height: 2,
-                          color: Color.fromRGBO(96, 110, 121, 1),
-                          thickness: 1,
-                        ),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>const FavoritePage()));
-                            },
-                            child: listProfile(Icons.favorite_border_outlined,
-                                "Favorit Saya")),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        const Divider(
-                          height: 2,
-                          color: Color.fromRGBO(96, 110, 121, 1),
-                          thickness: 1,
-                        ),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        InkWell(
-                            onTap: (){
-
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>const KatalogSayaPage()));
-
-                            },
-                            child: listProfile(Icons.storefront_outlined, "Katalog Saya")),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        const Divider(
-                          height: 2,
-                          color: Color.fromRGBO(96, 110, 121, 1),
-                          thickness: 1,
-                        ),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AboutPage()));
-                            },
-                            child: listProfile(Icons.help_outlined, "Pusat Bantuan")),
-                        SizedBox(
-                          height: getProportionateScreenHeight(10),
-                        ),
-                        const Divider(
-                          height: 2,
-                          color: Color.fromRGBO(96, 110, 121, 1),
-                          thickness: 1,
-                        ),
-                        SizedBox(
-                          height: getProportionateScreenHeight(60),
-                        ),
-                        InkWell(
-                            onTap: (){
-                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const LoginPage()),(route)=>false);
-                            },
-                            child: listProfile(Icons.logout_outlined, "Logout"))
-                      ],
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      "Nama Toko Serba Guna",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: getProportionateScreenWidth(18),
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
-                ),
-              ],
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: getProportionateScreenWidth(20)),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.only(top: getProportionateScreenHeight(40)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Akun Saya",
+                            style: TextStyle(
+                                fontSize: getProportionateScreenWidth(15)),
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(20),
+                          ),
+                          InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const InformasiSayaPage()));
+                              },
+                              child: listProfile(
+                                  Icons.person_outlined, "Informasi Akun")),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          const Divider(
+                            height: 2,
+                            color: Color.fromRGBO(96, 110, 121, 1),
+                            thickness: 1,
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>const FavoritePage()));
+                              },
+                              child: listProfile(Icons.favorite_border_outlined,
+                                  "Favorit Saya")),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          const Divider(
+                            height: 2,
+                            color: Color.fromRGBO(96, 110, 121, 1),
+                            thickness: 1,
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          InkWell(
+                              onTap: (){
+
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>const KatalogSayaPage()));
+
+                              },
+                              child: listProfile(Icons.storefront_outlined, "Katalog Saya")),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          const Divider(
+                            height: 2,
+                            color: Color.fromRGBO(96, 110, 121, 1),
+                            thickness: 1,
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          InkWell(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AboutPage()));
+                              },
+                              child: listProfile(Icons.help_outlined, "Pusat Bantuan")),
+                          SizedBox(
+                            height: getProportionateScreenHeight(10),
+                          ),
+                          const Divider(
+                            height: 2,
+                            color: Color.fromRGBO(96, 110, 121, 1),
+                            thickness: 1,
+                          ),
+                          SizedBox(
+                            height: getProportionateScreenHeight(60),
+                          ),
+                          InkWell(
+                              onTap: (){
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const LoginPage()),(route)=>false);
+                              },
+                              child: listProfile(Icons.logout_outlined, "Logout"))
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(

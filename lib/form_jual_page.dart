@@ -32,133 +32,135 @@ class _FormJualPageState extends State<FormJualPage> {
             top: getProportionateScreenHeight(20),
             left: getProportionateScreenWidth(10),
             right: getProportionateScreenWidth(10)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Kategori: Beras",
-              style: TextStyle(
-                  color: Colors.grey.shade600,
-                  fontSize: getProportionateScreenWidth(20),
-                  fontWeight: FontWeight.w600),
-            ),
-            TextFormField(
-              controller: _judulController,
-              maxLength: 50,
-              style: TextStyle(
-                  color: Colors.grey.shade600, fontWeight: FontWeight.w500),
-              cursorColor: Colors.grey.shade600,
-              decoration: InputDecoration(
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
-                focusColor: Colors.grey,
-                labelText: "Judul Iklan*",
-                labelStyle: TextStyle(
-                  color: Colors.grey.shade400,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Kategori: Beras",
+                style: TextStyle(
+                    color: Colors.grey.shade600,
+                    fontSize: getProportionateScreenWidth(20),
+                    fontWeight: FontWeight.w600),
+              ),
+              TextFormField(
+                controller: _judulController,
+                maxLength: 50,
+                style: TextStyle(
+                    color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+                cursorColor: Colors.grey.shade600,
+                decoration: InputDecoration(
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade600),
+                  ),
+                  focusColor: Colors.grey,
+                  labelText: "Judul Iklan*",
+                  labelStyle: TextStyle(
+                    color: Colors.grey.shade400,
+                  ),
                 ),
               ),
-            ),
-            TextFormField(
-              controller: _descController,
-              maxLength: 5000,
-              cursorColor: Colors.grey.shade600,
-              style: TextStyle(
-                  color: Colors.grey.shade600, fontWeight: FontWeight.w500),
-              decoration: InputDecoration(
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
-                focusColor: Colors.red,
-                labelText: "Descripsi Produk*",
-                labelStyle: TextStyle(
-                  color: Colors.grey.shade400,
-                ),
-              ),
-            ),
-            TextFormField(
-              controller: _satuanController,
-              maxLength: 50,
-              cursorColor: Colors.grey.shade600,
-              style: TextStyle(
-                  color: Colors.grey.shade600, fontWeight: FontWeight.w500),
-              decoration: InputDecoration(
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
-                focusColor: Colors.red,
-                labelText: "Satuan*",
-                labelStyle: TextStyle(
-                  color: Colors.grey.shade400,
+              TextFormField(
+                controller: _descController,
+                maxLength: 5000,
+                cursorColor: Colors.grey.shade600,
+                style: TextStyle(
+                    color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+                decoration: InputDecoration(
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade600),
+                  ),
+                  focusColor: Colors.red,
+                  labelText: "Descripsi Produk*",
+                  labelStyle: TextStyle(
+                    color: Colors.grey.shade400,
+                  ),
                 ),
               ),
-            ),
-            TextFormField(
-              controller: _hargaController,
-              maxLength: 50,
-              cursorColor: Colors.grey.shade600,
-              style: TextStyle(
-                  color: Colors.grey.shade600, fontWeight: FontWeight.w500),
-              decoration: InputDecoration(
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
-                focusColor: Colors.red,
-                labelText: "Descripsi Produk*",
-                labelStyle: TextStyle(
-                  color: Colors.grey.shade400,
+              TextFormField(
+                controller: _satuanController,
+                maxLength: 50,
+                cursorColor: Colors.grey.shade600,
+                style: TextStyle(
+                    color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+                decoration: InputDecoration(
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade600),
+                  ),
+                  focusColor: Colors.red,
+                  labelText: "Satuan*",
+                  labelStyle: TextStyle(
+                    color: Colors.grey.shade400,
+                  ),
                 ),
               ),
-            ),
-            Text(
-              "Lokasi*",
-              style: TextStyle(
-                  color: Colors.grey.shade400,
-                  fontSize: getProportionateScreenWidth(14)),
-            ),
-            Text(
-              "Yogyakarta",
-              style: TextStyle(fontSize: getProportionateScreenWidth(15)),
-            ),
-            SizedBox(
-              height: getProportionateScreenHeight(20),
-            ),
-            Text(
-              "Lokasi*",
-              style: TextStyle(
-                  color: Colors.grey.shade400,
-                  fontSize: getProportionateScreenWidth(14)),
-            ),
-            ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(primary: Colors.grey.shade400),
-                child: Text(
-                  "Unggah Foto",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: getProportionateScreenWidth(12)),
-                )),
-            SizedBox(
-              height: getProportionateScreenHeight(80),
-            ),
-            InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const SuccessPage()));
-              },
-              child: Container(
-                width: double.infinity,
-                height: getProportionateScreenHeight(45),
-                color: primaryColor,
-                child: Center(
-                    child: Text(
-                  "KIRIM",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: getProportionateScreenWidth(17)),
-                )),
+              TextFormField(
+                controller: _hargaController,
+                maxLength: 50,
+                cursorColor: Colors.grey.shade600,
+                style: TextStyle(
+                    color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+                decoration: InputDecoration(
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade600),
+                  ),
+                  focusColor: Colors.red,
+                  labelText: "Descripsi Produk*",
+                  labelStyle: TextStyle(
+                    color: Colors.grey.shade400,
+                  ),
+                ),
               ),
-            )
-          ],
+              Text(
+                "Lokasi*",
+                style: TextStyle(
+                    color: Colors.grey.shade400,
+                    fontSize: getProportionateScreenWidth(14)),
+              ),
+              Text(
+                "Yogyakarta",
+                style: TextStyle(fontSize: getProportionateScreenWidth(15)),
+              ),
+              SizedBox(
+                height: getProportionateScreenHeight(20),
+              ),
+              Text(
+                "Lokasi*",
+                style: TextStyle(
+                    color: Colors.grey.shade400,
+                    fontSize: getProportionateScreenWidth(14)),
+              ),
+              ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(primary: Colors.grey.shade400),
+                  child: Text(
+                    "Unggah Foto",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: getProportionateScreenWidth(12)),
+                  )),
+              SizedBox(
+                height: getProportionateScreenHeight(80),
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const SuccessPage()));
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: getProportionateScreenHeight(45),
+                  color: primaryColor,
+                  child: Center(
+                      child: Text(
+                    "KIRIM",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: getProportionateScreenWidth(17)),
+                  )),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
