@@ -27,8 +27,8 @@ class _MenuPageState extends State<MenuPage> {
           color: Colors.white,
           image: DecorationImage(
               fit: BoxFit.fill,
-              image: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/12/03/18/04/christmas-balls-2995437_960_720.jpg",
+              image: AssetImage(
+                "assets/banner/banner1-02.png",
               ))),
     ),
     Container(
@@ -38,8 +38,8 @@ class _MenuPageState extends State<MenuPage> {
           color: Colors.white,
           image: DecorationImage(
               fit: BoxFit.fill,
-              image: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/12/03/18/04/christmas-balls-2995437_960_720.jpg",
+              image: AssetImage(
+                "assets/banner/banner2-02.png",
               ))),
     ),
     Container(
@@ -49,8 +49,8 @@ class _MenuPageState extends State<MenuPage> {
           color: Colors.white,
           image: DecorationImage(
               fit: BoxFit.fill,
-              image: NetworkImage(
-                "https://cdn.pixabay.com/photo/2017/12/03/18/04/christmas-balls-2995437_960_720.jpg",
+              image:AssetImage(
+                "assets/banner/banner3-02.png",
               ))),
     ),
     // Image.network(
@@ -293,14 +293,17 @@ class _MenuPageState extends State<MenuPage> {
                   child: Container(
                     height: getProportionateScreenHeight(300),
                     width: getProportionateScreenWidth(100),
-                    color: Colors.red,
+                    color: Colors.white,
                     child: Column(
                       children: [
                         Expanded(
                             flex: 7,
                             child: Container(
                               color: Colors.grey,
-                              // child: Image.network("src"),
+
+                              child: Image.asset(
+                                menuListProductData[index].img,
+                                fit: BoxFit.fitWidth,),
                             )),
                         Expanded(
                             flex: 4,

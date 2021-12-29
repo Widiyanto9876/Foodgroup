@@ -12,6 +12,16 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
+
+  List<String> _imgList = [
+    "assets/product/apel.png",
+    "assets/product/ayam.png",
+    "assets/product/bawangp.png",
+    "assets/product/bawangm.png",
+    "assets/product/sapi.png",
+    "assets/product/tomat.png",
+    "assets/product/wortel.png",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +30,7 @@ class _FavoritePageState extends State<FavoritePage> {
         backgroundColor: primaryColor,
       ),
       body: ListView.builder(
-          itemCount: 5,
+          itemCount: _imgList.length,
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
@@ -43,13 +53,17 @@ class _FavoritePageState extends State<FavoritePage> {
                           width: getProportionateScreenWidth(70),
                           decoration: BoxDecoration(
                             color: Colors.grey.shade700,
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image:AssetImage(_imgList[index])
+                            )
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(
                               horizontal:
                               getProportionateScreenWidth(10)),
-                          height: getProportionateScreenHeight(76),
+                          height: getProportionateScreenHeight(90),
                           width: MediaQuery.of(context).size.width -
                               getProportionateScreenWidth(130),
                           child: Column(

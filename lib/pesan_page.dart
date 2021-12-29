@@ -22,7 +22,16 @@ class _PesanPageState extends State<PesanPage>
     super.dispose();
     _tabController?.dispose();
   }
-
+  List<String> _imgList = [
+    "assets/people/avatar1.png",
+    "assets/people/avatar2.png",
+    "assets/people/avatar3.png",
+    "assets/people/avatar4.png",
+    "assets/people/avatar1.png",
+    "assets/people/avatar2.png",
+    "assets/people/avatar3.png",
+    "assets/people/avatar4.png",
+  ];
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -114,7 +123,7 @@ class _PesanPageState extends State<PesanPage>
               color: Colors.white,
               child: ListView.builder(
                   padding: EdgeInsets.all(0),
-                  itemCount: 20,
+                  itemCount: _imgList.length,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
                     return InkWell(
@@ -134,7 +143,12 @@ class _PesanPageState extends State<PesanPage>
                                   width: getProportionateScreenWidth(60),
                                   decoration: BoxDecoration(
                                       color: primaryColor,
-                                      shape: BoxShape.circle),
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage(_imgList[index])
+                                      )
+                                  ),
                                 ),
                                 Container(
                                   width: getProportionateScreenWidth(220),
@@ -225,7 +239,7 @@ class _PesanPageState extends State<PesanPage>
               color: Colors.white,
               child: ListView.builder(
                   padding: EdgeInsets.all(0),
-                  itemCount: 20,
+                  itemCount: _imgList.length,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
                     return InkWell(
@@ -245,7 +259,12 @@ class _PesanPageState extends State<PesanPage>
                                   width: getProportionateScreenWidth(60),
                                   decoration: BoxDecoration(
                                       color: primaryColor,
-                                      shape: BoxShape.circle),
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                          fit: BoxFit.fill,
+                                          image: AssetImage(_imgList[index])
+                                      )
+                                  ),
                                 ),
                                 Container(
                                   width: getProportionateScreenWidth(220),
@@ -336,11 +355,10 @@ class _PesanPageState extends State<PesanPage>
               color: Colors.white,
               child: ListView.builder(
                   padding: EdgeInsets.all(0),
-                  itemCount: 20,
+                  itemCount: _imgList.length,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
                     return InkWell(
-
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>T4_chatItem()));
                       },
@@ -357,7 +375,12 @@ class _PesanPageState extends State<PesanPage>
                                   width: getProportionateScreenWidth(60),
                                   decoration: BoxDecoration(
                                       color: primaryColor,
-                                      shape: BoxShape.circle),
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                          fit: BoxFit.fill,
+                                          image: AssetImage(_imgList[index])
+                                      )
+                                  ),
                                 ),
                                 Container(
                                   width: getProportionateScreenWidth(220),

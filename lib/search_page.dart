@@ -494,6 +494,10 @@ final TextEditingController _searchController = TextEditingController();
                                     width: getProportionateScreenWidth(70),
                                     decoration: BoxDecoration(
                                       color: Colors.grey.shade700,
+                                      image: DecorationImage(
+                                        fit:BoxFit.fill,
+                                        image: AssetImage(menuListPromoData[index].img)
+                                      )
                                     ),
                                   ),
                                   Container(
@@ -572,10 +576,218 @@ final TextEditingController _searchController = TextEditingController();
                     }),
               ),
               Container(
-                color: Colors.pink,
+                color: Colors.white,
+                child: ListView.builder(
+                    itemCount: menuListPromoData.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProductDescPage()));
+                        },
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: getProportionateScreenHeight(10),
+                                  horizontal: getProportionateScreenWidth(20)),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: getProportionateScreenHeight(70),
+                                    width: getProportionateScreenWidth(70),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade700,
+                                      image: DecorationImage(
+                                        fit:BoxFit.fill,
+                                        image: AssetImage(menuListPromoData[index].img)
+                                      )
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            getProportionateScreenWidth(10)),
+                                    height: getProportionateScreenHeight(76),
+                                    width: MediaQuery.of(context).size.width -
+                                        getProportionateScreenWidth(130),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          menuListPromoData[index].pruduct,
+                                          style: TextStyle(
+                                              fontSize:
+                                                  getProportionateScreenWidth(
+                                                      13)),
+                                        ),
+                                        Text(
+                                          menuListPromoData[index].price,
+                                          style: TextStyle(
+                                              fontSize:
+                                                  getProportionateScreenWidth(
+                                                      13),
+                                              color: Colors.orange),
+                                        ),
+                                        SizedBox(
+                                          height:
+                                              getProportionateScreenHeight(20),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            SizedBox(
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.location_on_outlined,
+                                                    size:
+                                                        getProportionateScreenWidth(
+                                                            15),
+                                                  ),
+                                                  Text(
+                                                    menuListPromoData[index].range,
+                                                    style: TextStyle(
+                                                        fontSize:
+                                                            getProportionateScreenWidth(
+                                                                10)),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            Icon(
+                                              Icons.favorite_outlined,
+                                              size: getProportionateScreenWidth(18),
+                                              color:menuListPromoData[index].favorite == true ? Colors.red:Colors.grey,
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Divider(
+                              thickness: getProportionateScreenHeight(2),
+                              color: Colors.grey.shade400,
+                            )
+                          ],
+                        ),
+                      );
+                    }),
               ),
               Container(
-                color: Colors.purple,
+                color: Colors.white,
+                child: ListView.builder(
+                    itemCount: menuListPromoData.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ProductDescPage()));
+                        },
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: getProportionateScreenHeight(10),
+                                  horizontal: getProportionateScreenWidth(20)),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: getProportionateScreenHeight(70),
+                                    width: getProportionateScreenWidth(70),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade700,
+                                      image: DecorationImage(
+                                        fit:BoxFit.fill,
+                                        image: AssetImage(menuListPromoData[index].img)
+                                      )
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            getProportionateScreenWidth(10)),
+                                    height: getProportionateScreenHeight(76),
+                                    width: MediaQuery.of(context).size.width -
+                                        getProportionateScreenWidth(130),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          menuListPromoData[index].pruduct,
+                                          style: TextStyle(
+                                              fontSize:
+                                                  getProportionateScreenWidth(
+                                                      13)),
+                                        ),
+                                        Text(
+                                          menuListPromoData[index].price,
+                                          style: TextStyle(
+                                              fontSize:
+                                                  getProportionateScreenWidth(
+                                                      13),
+                                              color: Colors.orange),
+                                        ),
+                                        SizedBox(
+                                          height:
+                                              getProportionateScreenHeight(20),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            SizedBox(
+                                              child: Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.location_on_outlined,
+                                                    size:
+                                                        getProportionateScreenWidth(
+                                                            15),
+                                                  ),
+                                                  Text(
+                                                    menuListPromoData[index].range,
+                                                    style: TextStyle(
+                                                        fontSize:
+                                                            getProportionateScreenWidth(
+                                                                10)),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            Icon(
+                                              Icons.favorite_outlined,
+                                              size: getProportionateScreenWidth(18),
+                                              color:menuListPromoData[index].favorite == true ? Colors.red:Colors.grey,
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Divider(
+                              thickness: getProportionateScreenHeight(2),
+                              color: Colors.grey.shade400,
+                            )
+                          ],
+                        ),
+                      );
+                    }),
               ),
             ]),
           )

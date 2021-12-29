@@ -56,6 +56,10 @@ class _KatalogSayaPageState extends State<KatalogSayaPage> {
                                 width: getProportionateScreenWidth(70),
                                 decoration: BoxDecoration(
                                   color: Colors.grey.shade700,
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(menuKatalog[index].img)
+                                  )
                                 ),
                               ),
                               Container(
