@@ -12,6 +12,16 @@ class ProfileTokoPage extends StatefulWidget {
 
 class _ProfileTokoPageState extends State<ProfileTokoPage> {
   String status = "Follow";
+
+  List<String> _imgList = [
+    "assets/product/apel.png",
+    "assets/product/ayam.png",
+    "assets/product/bawangp.png",
+    "assets/product/bawangm.png",
+    "assets/product/sapi.png",
+    "assets/product/tomat.png",
+    "assets/product/wortel.png",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +95,9 @@ class _ProfileTokoPageState extends State<ProfileTokoPage> {
                               decoration: const BoxDecoration(
                                 color: Colors.white,
                                 shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage("assets/people/avatar1.png"))
                               ),
                             ),
                             SizedBox(
@@ -206,7 +219,7 @@ class _ProfileTokoPageState extends State<ProfileTokoPage> {
                         mainAxisSpacing: 10,
                         crossAxisSpacing: 10,
                         childAspectRatio: 0.8),
-                    itemCount: 7,
+                    itemCount: _imgList.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
                         height: getProportionateScreenHeight(300),
@@ -217,8 +230,8 @@ class _ProfileTokoPageState extends State<ProfileTokoPage> {
                             Expanded(
                                 flex: 7,
                                 child: Container(
-                                  color: Colors.grey,
-                                  // child: Image.network("src"),
+                                  color: Colors.white,
+                                  child: Image.asset(_imgList[index],fit: BoxFit.fill),
                                 )),
                             Expanded(
                                 flex: 4,
