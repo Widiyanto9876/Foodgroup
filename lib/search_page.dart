@@ -504,7 +504,7 @@ final TextEditingController _searchController = TextEditingController();
                                     margin: EdgeInsets.symmetric(
                                         horizontal:
                                             getProportionateScreenWidth(10)),
-                                    height: getProportionateScreenHeight(76),
+                                    height: getProportionateScreenHeight(85),
                                     width: MediaQuery.of(context).size.width -
                                         getProportionateScreenWidth(130),
                                     child: Column(
@@ -611,7 +611,7 @@ final TextEditingController _searchController = TextEditingController();
                                     margin: EdgeInsets.symmetric(
                                         horizontal:
                                             getProportionateScreenWidth(10)),
-                                    height: getProportionateScreenHeight(76),
+                                    height: getProportionateScreenHeight(85),
                                     width: MediaQuery.of(context).size.width -
                                         getProportionateScreenWidth(130),
                                     child: Column(
@@ -718,7 +718,7 @@ final TextEditingController _searchController = TextEditingController();
                                     margin: EdgeInsets.symmetric(
                                         horizontal:
                                             getProportionateScreenWidth(10)),
-                                    height: getProportionateScreenHeight(76),
+                                    height: getProportionateScreenHeight(85),
                                     width: MediaQuery.of(context).size.width -
                                         getProportionateScreenWidth(130),
                                     child: Column(

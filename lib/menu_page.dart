@@ -171,7 +171,7 @@ class _MenuPageState extends State<MenuPage> {
             ),
             GFCarousel(
                 autoPlay: true,
-                pagination: true,
+                // pub
                 viewportFraction: 1.0,
                 aspectRatio: 2,
                 passiveIndicator: Colors.white,
